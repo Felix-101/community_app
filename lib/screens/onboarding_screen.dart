@@ -155,7 +155,7 @@ class _ConnectPageState extends State<ConnectPage> {
                       OButton(
                         title: "Continue with Apple ID",
                         iconPath: CommunityAppAssets.apple,
-                        color: const Color(0xFF5925DC), // Purple color from screenshot
+                        color: CommunityAppColors.buttonColor, // Purple color from screenshot
                         textColor: Colors.white,
                         width: double.infinity,
                         onPressed: () {},

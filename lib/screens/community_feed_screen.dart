@@ -31,7 +31,6 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
     final screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         children: [
           Stack(
@@ -213,7 +212,7 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                             Container(
                               padding: const EdgeInsets.all(12),
                               decoration: BoxDecoration(
-                                color: Color(0xFF5925DC),
+                                color: CommunityAppColors.primaryColor,
                                 shape: BoxShape.circle,
                               ),
                               child: SvgPicture.asset(
@@ -242,7 +241,7 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
             child: TabBar(
               controller: _tabController,
               indicator: const BoxDecoration(), // remove underline
-              labelColor: const Color(0xFF5925DC),
+              labelColor:  CommunityAppColors.primaryColor,
               unselectedLabelColor: Colors.grey[400],
               labelStyle: const TextStyle(
                 fontWeight: FontWeight.w600,
@@ -356,7 +355,7 @@ class CommunityPost extends StatelessWidget {
                         "Admin",
                         style: TextStyle(
                           fontSize: 12,
-                          color: Color(0xFF5925DC),
+                          color: CommunityAppColors.primaryColor,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
@@ -379,7 +378,10 @@ class CommunityPost extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Text(
             "Congratulations to @Adekoya for the new whip. \nWho's available for a quick spin around the city in my Benzo!!",
-            style: TextStyle(fontSize: 15, color: Color.fromARGB(255, 38, 6, 116)),
+            style: TextStyle(
+              fontSize: 15,
+              color: Color.fromARGB(255, 38, 6, 116),
+            ),
           ),
         ),
 

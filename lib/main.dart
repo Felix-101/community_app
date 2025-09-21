@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           theme: ThemeData(
+            scaffoldBackgroundColor: Colors.white,
             textTheme: GoogleFonts.latoTextTheme(Theme.of(context).textTheme),
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
