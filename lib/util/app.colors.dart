@@ -8,5 +8,6 @@ class CommunityAppColors {
   static const Color textColor = Color(0xFF5925DC);
   static const Color backgroundColor = Color(0xFFFFFEFE);
   static const Color borderColor = Color(0xFF5925DC);
-
+  static const Color mainBlack = Colors.black;
+  static const Color mainBlue = Color(0xFF4285F4);
 }

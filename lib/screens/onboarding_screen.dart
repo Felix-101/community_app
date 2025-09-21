@@ -34,7 +34,7 @@ class _ConnectPageState extends State<ConnectPage> {
           // Dark overlay for better text readability
           Container(
             decoration: BoxDecoration(
-              color: Colors.black.withValues(alpha: 0.3),
+              color: CommunityAppColors.mainBlack.withValues(alpha: 0.3),
             ),
           ),
 
@@ -67,7 +67,6 @@ class _ConnectPageState extends State<ConnectPage> {
                                       },
                                     ),
                                     LanguageOption(
-                                      
                                       label: "Español",
                                       selectedValue: selectedLang,
                                       onChanged: (val) {
@@ -138,7 +137,7 @@ class _ConnectPageState extends State<ConnectPage> {
                       "Connect with\nyour community\nwherever you are",
                       textAlign: TextAlign.left,
                       style: const TextStyle(
-                        color: Colors.white,
+                        color: CommunityAppColors.backgroundColor,
                         fontSize: 32,
                         fontWeight: FontWeight.bold,
                         height: 1.2,
@@ -155,7 +154,8 @@ class _ConnectPageState extends State<ConnectPage> {
                       OButton(
                         title: "Continue with Apple ID",
                         iconPath: CommunityAppAssets.apple,
-                        color: CommunityAppColors.buttonColor, // Purple color from screenshot
+                        color: CommunityAppColors
+                            .buttonColor, // Purple color from screenshot
                         textColor: Colors.white,
                         width: double.infinity,
                         onPressed: () {},
@@ -164,8 +164,8 @@ class _ConnectPageState extends State<ConnectPage> {
                       OButton(
                         title: "Continue with Google",
                         iconPath: CommunityAppAssets.google,
-                        color: const Color(0xFF4285F4), // Google blue
-                        textColor: Colors.white,
+                        color: CommunityAppColors.mainBlue, // Google blue
+                        textColor: CommunityAppColors.backgroundColor,
                         width: double.infinity,
                         onPressed: () {},
                       ),
@@ -175,12 +175,12 @@ class _ConnectPageState extends State<ConnectPage> {
                         iconPath: CommunityAppAssets
                             .email, // Keep the icon as in original
                         color: Colors.transparent,
-                        textColor: Colors.white,
+                        textColor: CommunityAppColors.backgroundColor,
                         width: double.infinity,
                         onPressed: () {
                           nextScreen(context, const CommunityFeedScreen());
                         },
-                        borderColor: Colors.white,
+                        borderColor: CommunityAppColors.backgroundColor,
                       ),
                     ],
                   ),
@@ -195,7 +195,9 @@ class _ConnectPageState extends State<ConnectPage> {
                     "By signing up, you accept the Terms of Use and\nPrivacy Policy of how we process your data.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.8),
+                      color: CommunityAppColors.backgroundColor.withValues(
+                        alpha: 0.8,
+                      ),
                       fontSize: 12,
                       height: 1.4,
                     ),

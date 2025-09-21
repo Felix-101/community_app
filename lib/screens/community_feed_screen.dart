@@ -37,17 +37,14 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
             children: [
               // Background image container
               SizedBox(
-                height: screenHeight * 0.35, // Adjust this height as needed
+                height: screenHeight * 0.35,
                 width: double.infinity,
                 child: Image.asset(
                   CommunityAppAssets.background_2,
                   fit: BoxFit.cover,
-                  // The image in the example is very vibrant and appears high-quality,
-                  // ensure your asset matches this style.
                 ),
               ),
 
-              // Dark overlay with strong bottom gradient for better text visibility
               Container(
                 height: screenHeight * 0.35,
                 width: double.infinity,
@@ -55,22 +52,23 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                   gradient: LinearGradient(
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
-                    // Use a stronger gradient from a lower starting opacity
+
                     colors: [
-                      Colors.black.withValues(alpha: 0.0),
-                      Colors.black.withValues(
-                        alpha: 0.8,
-                      ), // Stronger dark at the bottom
+                      CommunityAppColors.mainBlack.withValues(alpha: 0.1),
+                      CommunityAppColors.mainBlack.withValues(alpha: 0.8),
                     ],
                   ),
                 ),
               ),
 
-              // Top action buttons (like the three dots menu in the top right)
               Positioned(
                 top: 40, // Adjust based on your status bar height needs
                 right: 16,
-                child: Icon(Icons.more_vert, color: Colors.white, size: 28),
+                child: Icon(
+                  Icons.more_vert,
+                  color: CommunityAppColors.backgroundColor,
+                  size: 28,
+                ),
               ),
 
               // Content overlay - Positioned at the bottom of the Stack
@@ -88,7 +86,7 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                           "Ekwale People",
                           style: TextStyle(
                             fontSize: 28,
-                            color: Colors.white,
+                            color: CommunityAppColors.backgroundColor,
                             fontWeight: FontWeight.bold,
                             // Ensure the font matches the visual weight of the image
                           ),
@@ -98,13 +96,14 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                         Container(
                           padding: const EdgeInsets.all(2),
                           decoration: BoxDecoration(
-                            color: Colors.blue, // Verified blue color
+                            color: CommunityAppColors
+                                .mainBlue, // Verified blue color
                             shape: BoxShape.circle,
                           ),
                           child: Icon(
                             Icons
                                 .check, // Using a standard checkmark icon for simplicity
-                            color: Colors.white,
+                            color: CommunityAppColors.backgroundColor,
                             size: 16,
                           ),
                         ),
@@ -131,13 +130,16 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                           "Nigerian",
                           style: TextStyle(
                             fontSize: 16,
-                            color: Colors.white,
+                            color: CommunityAppColors.backgroundColor,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
                         Text(
                           " • ", // Separator dot
-                          style: TextStyle(fontSize: 16, color: Colors.white),
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: CommunityAppColors.backgroundColor,
+                          ),
                         ),
                         // People icon (as seen in the image - a simple person silhouette)
                         SvgPicture.asset(
@@ -145,7 +147,7 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                           width: 18,
                           height: 18,
                           colorFilter: ColorFilter.mode(
-                            Colors.white,
+                            CommunityAppColors.backgroundColor,
                             BlendMode.srcIn,
                           ),
                         ),
@@ -154,7 +156,7 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                           "Local",
                           style: TextStyle(
                             fontSize: 16,
-                            color: Colors.white,
+                            color: CommunityAppColors.backgroundColor,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -174,7 +176,7 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                           "170 members",
                           style: TextStyle(
                             fontSize: 16,
-                            color: Colors.white,
+                            color: CommunityAppColors.backgroundColor,
                             fontWeight: FontWeight.w500,
                           ),
                         ),
@@ -191,7 +193,7 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                                 width: 20,
                                 height: 20,
                                 colorFilter: ColorFilter.mode(
-                                  Colors.white,
+                                  CommunityAppColors.backgroundColor,
                                   BlendMode.srcIn,
                                 ),
                               ),
@@ -203,7 +205,7 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                               decoration: BoxDecoration(),
                               child: Icon(
                                 Icons.info_outline,
-                                color: Colors.white,
+                                color: CommunityAppColors.backgroundColor,
                                 size: 20,
                               ),
                             ),
@@ -220,7 +222,7 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
                                 width: 20,
                                 height: 20,
                                 colorFilter: ColorFilter.mode(
-                                  Colors.white,
+                                  CommunityAppColors.backgroundColor,
                                   BlendMode.srcIn,
                                 ),
                               ),
@@ -236,12 +238,12 @@ class _CommunityFeedScreenState extends State<CommunityFeedScreen>
           ),
           // Rest of the feed content would go here
           Material(
-            color: Colors.white,
+            color: CommunityAppColors.backgroundColor,
 
             child: TabBar(
               controller: _tabController,
               indicator: const BoxDecoration(), // remove underline
-              labelColor:  CommunityAppColors.primaryColor,
+              labelColor: CommunityAppColors.primaryColor,
               unselectedLabelColor: Colors.grey[400],
               labelStyle: const TextStyle(
                 fontWeight: FontWeight.w600,
@@ -378,10 +380,7 @@ class CommunityPost extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
           child: Text(
             "Congratulations to @Adekoya for the new whip. \nWho's available for a quick spin around the city in my Benzo!!",
-            style: TextStyle(
-              fontSize: 15,
-              color: Color.fromARGB(255, 38, 6, 116),
-            ),
+            style: TextStyle(fontSize: 15, color: CommunityAppColors.textColor),
           ),
         ),
 
@@ -413,12 +412,15 @@ class CommunityPost extends StatelessWidget {
                     children: [
                       const Text(
                         "0:59",
-                        style: TextStyle(color: Colors.white, fontSize: 12),
+                        style: TextStyle(
+                          color: CommunityAppColors.backgroundColor,
+                          fontSize: 12,
+                        ),
                       ),
                       const SizedBox(width: 4),
                       const Icon(
                         Icons.volume_up,
-                        color: Colors.white,
+                        color: CommunityAppColors.backgroundColor,
                         size: 12,
                       ),
                     ],
@@ -544,7 +546,10 @@ class OverlappingImages extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 // Thick white border as seen in the image
-                border: Border.all(color: Colors.white, width: 3),
+                border: Border.all(
+                  color: CommunityAppColors.backgroundColor,
+                  width: 3,
+                ),
               ),
               child: ClipOval(
                 child: Image.asset(
